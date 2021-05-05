@@ -20,10 +20,10 @@
 <meta property="article:author" content="x1a071">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=1620207323487">
+  <link rel="stylesheet" href="/css/style.css?v=1620209179922">
   
-  <link rel="stylesheet" href="/css/style.css?v=1620207323487">
-  <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1620207323487">
+  <link rel="stylesheet" href="/css/style.css?v=1620209179922">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1620209179922">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -132,23 +132,26 @@
 
         <div class="nexmoe-post-meta nexmoe-rainbow-fill">
             <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月05日</a>
-            <a><i class="nexmoefont icon-areachart"></i>327 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>340 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
         <article>
             
-                <h1 id="1-首先导入需要的pip库"><a href="#1-首先导入需要的pip库" class="headerlink" title="1.首先导入需要的pip库."></a>1.首先导入需要的pip库.</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
+                <p>我的第一个爬虫,不算优秀但能凑合.</p>
+<h2 id="1-首先导入需要的pip库"><a href="#1-首先导入需要的pip库" class="headerlink" title="1.首先导入需要的pip库."></a>1.首先导入需要的pip库.</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
 
-<h1 id="2-这里是获取你要爬取哪一页的图片-需要填写"><a href="#2-这里是获取你要爬取哪一页的图片-需要填写" class="headerlink" title="2.这里是获取你要爬取哪一页的图片,需要填写."></a>2.这里是获取你要爬取哪一页的图片,需要填写.</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    page = <span class="built_in">input</span>(<span class="string">&#x27;选择你爬取的页数2-132&#x27;</span>)</span><br><span class="line">    url = <span class="string">f&#x27;http://www.netbian.com/dongman/index_<span class="subst">&#123;page&#125;</span>.htm&#x27;</span></span><br><span class="line">    get = requests.get(url).content.decode(<span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="2-这里是获取你要爬取哪一页的图片-需要填写"><a href="#2-这里是获取你要爬取哪一页的图片-需要填写" class="headerlink" title="2.这里是获取你要爬取哪一页的图片,需要填写."></a>2.这里是获取你要爬取哪一页的图片,需要填写.</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    page = <span class="built_in">input</span>(<span class="string">&#x27;选择你爬取的页数2-132&#x27;</span>)</span><br><span class="line">    url = <span class="string">f&#x27;http://www.netbian.com/dongman/index_<span class="subst">&#123;page&#125;</span>.htm&#x27;</span></span><br><span class="line">    get = requests.get(url).content.decode(<span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<h1 id="3-创造一个循环数量等于单页内图片的数量"><a href="#3-创造一个循环数量等于单页内图片的数量" class="headerlink" title="3.创造一个循环数量等于单页内图片的数量."></a>3.创造一个循环数量等于单页内图片的数量.</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> a &lt; <span class="number">19</span>:</span><br><span class="line">    a = a + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-创造一个循环数量等于单页内图片的数量"><a href="#3-创造一个循环数量等于单页内图片的数量" class="headerlink" title="3.创造一个循环数量等于单页内图片的数量."></a>3.创造一个循环数量等于单页内图片的数量.</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> a &lt; <span class="number">19</span>:</span><br><span class="line">    a = a + <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="4-获取总网页中的子网页中的图片网页-说的有点乱-但话糙理不糙"><a href="#4-获取总网页中的子网页中的图片网页-说的有点乱-但话糙理不糙" class="headerlink" title="4.获取总网页中的子网页中的图片网页.(说的有点乱,但话糙理不糙.)"></a>4.获取总网页中的子网页中的图片网页.(说的有点乱,但话糙理不糙.)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">        div = re.findall(<span class="string">&#x27;&lt;a href=&quot;(.*?)&quot; title=&quot;(.*?)&quot; target=&quot;_blank&quot;&gt;&#x27;</span>, get)[a][<span class="number">0</span>]</span><br><span class="line">        idurl = <span class="string">f&#x27;http://www.netbian.com<span class="subst">&#123;div&#125;</span>&#x27;</span></span><br><span class="line">        picurl = requests.get(idurl).content.decode(<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line">        pic = re.findall(<span class="string">&#x27;&lt;img src=&quot;(.*?)&quot; alt=&quot;(.*?)&quot; title=&quot;(.*?)&quot;&gt;&#x27;</span>, picurl)[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">        name = re.findall(<span class="string">&#x27;&lt;img src=&quot;(.*?)&quot; alt=&quot;(.*?)&quot; title=&quot;(.*?)&quot;&gt;&#x27;</span>, picurl)[<span class="number">0</span>][-<span class="number">1</span>]</span><br><span class="line">~~~     </span><br><span class="line">        </span><br><span class="line"><span class="comment"># 5.打印出图片的名称和图片的链接并打印爬取成功的信息.        </span></span><br><span class="line">~~~python</span><br><span class="line">        <span class="built_in">print</span>(name)</span><br><span class="line">        <span class="built_in">print</span>(pic)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;爬取成功&#x27;</span><span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="4-获取总网页中的子网页中的图片网页-说的有点乱-但话糙理不糙"><a href="#4-获取总网页中的子网页中的图片网页-说的有点乱-但话糙理不糙" class="headerlink" title="4.获取总网页中的子网页中的图片网页.(说的有点乱,但话糙理不糙.)"></a>4.获取总网页中的子网页中的图片网页.(说的有点乱,但话糙理不糙.)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">div = re.findall(<span class="string">&#x27;&lt;a href=&quot;(.*?)&quot; title=&quot;(.*?)&quot; target=&quot;_blank&quot;&gt;&#x27;</span>, get)[a][<span class="number">0</span>]</span><br><span class="line">idurl = <span class="string">f&#x27;http://www.netbian.com<span class="subst">&#123;div&#125;</span>&#x27;</span></span><br><span class="line">picurl = requests.get(idurl).content.decode(<span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line">pic = re.findall(<span class="string">&#x27;&lt;img src=&quot;(.*?)&quot; alt=&quot;(.*?)&quot; title=&quot;(.*?)&quot;&gt;&#x27;</span>, picurl)[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">name = re.findall(<span class="string">&#x27;&lt;img src=&quot;(.*?)&quot; alt=&quot;(.*?)&quot; title=&quot;(.*?)&quot;&gt;&#x27;</span>, picurl)[<span class="number">0</span>][-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
 
-<h1 id="6-保存图片-路径按自己需求-需要有此文件夹"><a href="#6-保存图片-路径按自己需求-需要有此文件夹" class="headerlink" title="6.保存图片,路径按自己需求,需要有此文件夹."></a>6.保存图片,路径按自己需求,需要有此文件夹.</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img = requests.get(pic)</span><br><span class="line">time.sleep(<span class="number">0.3</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;(！！路径！！)/<span class="subst">&#123;page&#125;</span>----，第<span class="subst">&#123;a&#125;</span>张--,<span class="subst">&#123;name&#125;</span>.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> girl:</span><br><span class="line">    girl.write(img.content)</span><br></pre></td></tr></table></figure>
+<h3 id="5-打印出图片的名称和图片的链接并打印爬取成功的信息"><a href="#5-打印出图片的名称和图片的链接并打印爬取成功的信息" class="headerlink" title="5.打印出图片的名称和图片的链接并打印爬取成功的信息."></a>5.打印出图片的名称和图片的链接并打印爬取成功的信息.</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(name)</span><br><span class="line"><span class="built_in">print</span>(pic)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;爬取成功&#x27;</span><span class="string">&#x27;\n&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<h1 id="7-保存后的结果就是-页数-—-第-几-张–-图片名字-jpg"><a href="#7-保存后的结果就是-页数-—-第-几-张–-图片名字-jpg" class="headerlink" title="7.保存后的结果就是  (页数)—-第(几)张–(图片名字).jpg"></a>7.保存后的结果就是  (页数)—-第(几)张–(图片名字).jpg</h1>
+<h3 id="6-保存图片-路径按自己需求-需要有此文件夹"><a href="#6-保存图片-路径按自己需求-需要有此文件夹" class="headerlink" title="6.保存图片,路径按自己需求,需要有此文件夹."></a>6.保存图片,路径按自己需求,需要有此文件夹.</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img = requests.get(pic)</span><br><span class="line">time.sleep(<span class="number">0.3</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;(！！路径！！)/<span class="subst">&#123;page&#125;</span>----，第<span class="subst">&#123;a&#125;</span>张--,<span class="subst">&#123;name&#125;</span>.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> girl:</span><br><span class="line">    girl.write(img.content)</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-保存后的结果就是-页数-—-第-几-张–-图片名字-jpg"><a href="#7-保存后的结果就是-页数-—-第-几-张–-图片名字-jpg" class="headerlink" title="7.保存后的结果就是  (页数)—-第(几)张–(图片名字).jpg"></a>7.保存后的结果就是  (页数)—-第(几)张–(图片名字).jpg</h3>
             
         </article>
     </div>
@@ -157,33 +160,33 @@
         <a href="/2021/05/05/hello-world/">
             
                 <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 66.66666666666666%;"> 
-                    <img data-src="http://r.photo.store.qq.com/psc?/V52xNKaD0NmxUM0J9d5o0igeOt03YfcN/45NBuzDIW489QBoVep5mcfvkuUSL2*fGz7KtT9T3aSyGU.3s80SKI2szzs6c6JV0nqSRtejoIts0mgOZWLXgs6kgY.Xw2xlG*2hmPyRIh5w!/r" data-sizes="auto" alt="Hello World" class="lazyload">
-                    <h1>Hello World</h1>
+                    <img data-src="http://r.photo.store.qq.com/psc?/V52xNKaD0NmxUM0J9d5o0igeOt03YfcN/45NBuzDIW489QBoVep5mcfvkuUSL2*fGz7KtT9T3aSyGU.3s80SKI2szzs6c6JV0nqSRtejoIts0mgOZWLXgs6kgY.Xw2xlG*2hmPyRIh5w!/r" data-sizes="auto" alt="一些指令" class="lazyload">
+                    <h1>一些指令</h1>
                 </div>
             
         </a>
 
         <div class="nexmoe-post-meta nexmoe-rainbow-fill">
             <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月05日</a>
-            <a><i class="nexmoefont icon-areachart"></i>75 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>79 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
 
         <article>
             
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <p>第一个帖子</p>
+<h2 id="快速启动"><a href="#快速启动" class="headerlink" title="快速启动"></a>快速启动</h2><h3 id="创建新帖子"><a href="#创建新帖子" class="headerlink" title="创建新帖子"></a>创建新帖子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">写作</a></p>
+<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">计算机网络服务器</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">产生</a></p>
+<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>更多信息: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">部署</a></p>
 
             
         </article>
@@ -215,7 +218,7 @@
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
  
 
-<script src="/js/app.js?v=1620207323488"></script>
+<script src="/js/app.js?v=1620209179923"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
