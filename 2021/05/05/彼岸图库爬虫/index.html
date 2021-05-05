@@ -12,21 +12,23 @@
   
 
   <link rel="shortcut icon" href="http://r.photo.store.qq.com/psc?/V52xNKaD0NmxUM0J9d5o0igeOt12HUTn/45NBuzDIW489QBoVep5mcWCNuz.96J8OLtOLl1nVE7HtRSNZSBnHX*ifopLYng7o9P4PG.8AMNpcH2zusgZqvIUTY7fmG4uvHb7KCtEry2E!/r" type="image/jpg" />
-  <meta property="og:type" content="article">
+  <meta name="description" content="1.首先导入需要的数据库. import requestsimport reimport time 2.这里是获取你要爬取哪一页的图片,需要填写. if name &#x3D;&#x3D; ‘main‘:    page &#x3D; input(‘选择你爬取的页数2-132’)    url &#x3D; f’http:&#x2F;&#x2F;www.netbian.com&#x2F;dongman&#x2F;index_{page}.htm&#39;    get &#x3D; r">
+<meta property="og:type" content="article">
 <meta property="og:title" content="彼岸图库爬虫">
 <meta property="og:url" content="https://x1a071.github.io/2021/05/05/%E5%BD%BC%E5%B2%B8%E5%9B%BE%E5%BA%93%E7%88%AC%E8%99%AB/index.html">
 <meta property="og:site_name" content="昔骜">
+<meta property="og:description" content="1.首先导入需要的数据库. import requestsimport reimport time 2.这里是获取你要爬取哪一页的图片,需要填写. if name &#x3D;&#x3D; ‘main‘:    page &#x3D; input(‘选择你爬取的页数2-132’)    url &#x3D; f’http:&#x2F;&#x2F;www.netbian.com&#x2F;dongman&#x2F;index_{page}.htm&#39;    get &#x3D; r">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-05-05T09:11:03.000Z">
-<meta property="article:modified_time" content="2021-05-05T09:13:29.570Z">
+<meta property="article:modified_time" content="2021-05-05T09:22:08.849Z">
 <meta property="article:author" content="x1a071">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=1620206116231">
+  <link rel="stylesheet" href="/css/style.css?v=1620206568179">
   
-  <link rel="stylesheet" href="/css/style.css?v=1620206116231">
-  <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1620206116231">
+  <link rel="stylesheet" href="/css/style.css?v=1620206568179">
+  <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1620206568179">
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -133,13 +135,43 @@
     
     <div class="nexmoe-post-meta nexmoe-rainbow-fill" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>0 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>318 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
 </div>
 
     
 
+    <p>1.首先导入需要的数据库.</p>
+<p>import requests<br>import re<br>import time</p>
+<p>2.这里是获取你要爬取哪一页的图片,需要填写.</p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    page = input(‘选择你爬取的页数2-132’)<br>    url = f’<a target="_blank" rel="noopener" href="http://www.netbian.com/dongman/index_%7Bpage%7D.htm&#39;">http://www.netbian.com/dongman/index_{page}.htm&#39;</a><br>    get = requests.get(url).content.decode(‘gbk’)</p>
+<p>3.创造一个循环数量等于单页内图片的数量.</p>
+<pre><code>a = 0
+while a &lt; 19:
+    a = a + 1
+</code></pre>
+<p>4.获取总网页中的子网页中的图片网页.(说的有点乱,但话糙理不糙.)</p>
+<pre><code>    div = re.findall(&#39;&lt;a href=&quot;(.*?)&quot; title=&quot;(.*?)&quot; target=&quot;_blank&quot;&gt;&#39;, get)[a][0]
+    idurl = f&#39;http://www.netbian.com&#123;div&#125;&#39;
+    picurl = requests.get(idurl).content.decode(&#39;gbk&#39;)
+    pic = re.findall(&#39;&lt;img src=&quot;(.*?)&quot; alt=&quot;(.*?)&quot; title=&quot;(.*?)&quot;&gt;&#39;, picurl)[0][0]
+    name = re.findall(&#39;&lt;img src=&quot;(.*?)&quot; alt=&quot;(.*?)&quot; title=&quot;(.*?)&quot;&gt;&#39;, picurl)[0][-1]
     
+    
+</code></pre>
+<p>5.打印出图片的名称和图片的链接并打印爬取成功的信息.        </p>
+<pre><code>    print(name)
+    print(pic)
+    print(&#39;爬取成功&#39;&#39;\n&#39;)
+</code></pre>
+<p>6.保存图片,路径按自己需求,需要有此文件夹.</p>
+<pre><code>    img = requests.get(pic)
+    time.sleep(0.3)
+    with open(f&#39;(！！路径！！)/&#123;page&#125;----，第&#123;a&#125;张--,&#123;name&#125;.jpg&#39;, &#39;wb&#39;) as girl:
+        girl.write(img.content)
+</code></pre>
+<p>7.保存后的结果就是  (页数)—-第(几)张–(图片名字).jpg            </p>
+
   </article>
 
   
@@ -205,7 +237,7 @@
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
  
 
-<script src="/js/app.js?v=1620206116233"></script>
+<script src="/js/app.js?v=1620206568182"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
 <script>
