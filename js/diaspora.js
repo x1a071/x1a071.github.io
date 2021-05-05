@@ -148,9 +148,9 @@ var Diaspora = {
         }
 
         setTimeout( function(){}, 1 * 1000 )
-        if (p.eq(0).data("autoplay") == true) {
-            p[0].play();
-        }
+            if (p.eq(0).data("autoplay") == true) {
+                p[0].play();
+            }
 
         p.on({
             'timeupdate': function() {
