@@ -1,147 +1,61 @@
+
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="en" class="loading">
 <head>
-  
-  <title>彼岸图库爬虫 - 昔骜</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>彼岸图库爬虫 - 昔骜</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="我的第一个爬虫,不算优秀但能凑合.
+1.首先导入需要的pip库.123import requestsimport reimport time
 
-  <link rel="shortcut icon" href="http://r.photo.store.qq.com/psc?/V52xNKaD0NmxUM0J9d5o0igeOt12HUTn/45NBuzDIW489QBoVep5mcWCNuz.96J8OLtOLl1nVE7HtRSNZSBnHX*ifopLYng7o9P4PG.8AMNpcH2zusgZqvIUTY7fmG4uvHb7KCtEry2E!/r" type="image/jpg" />
-  <meta name="description" content="我的第一个爬虫,不算优秀但能凑合. 1.首先导入需要的pip库.123import requestsimport reimport time  2.这里是获取你要爬取哪一页的图片,需要填写.1234if __name__ &#x3D;&#x3D; &amp;#x27;__main__&amp;#x27;:    page &#x3D; input(&amp;#x27;选择你爬取的页数2-132&amp;#x27;)    url &#x3D; f&amp;#x27;http:">
-<meta property="og:type" content="article">
-<meta property="og:title" content="彼岸图库爬虫">
-<meta property="og:url" content="https://x1a071.github.io/2021/05/05/%E5%BD%BC%E5%B2%B8%E5%9B%BE%E5%BA%93%E7%88%AC%E8%99%AB/index.html">
-<meta property="og:site_name" content="昔骜">
-<meta property="og:description" content="我的第一个爬虫,不算优秀但能凑合. 1.首先导入需要的pip库.123import requestsimport reimport time  2.这里是获取你要爬取哪一页的图片,需要填写.1234if __name__ &#x3D;&#x3D; &amp;#x27;__main__&amp;#x27;:    page &#x3D; input(&amp;#x27;选择你爬取的页数2-132&amp;#x27;)    url &#x3D; f&amp;#x27;http:">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-05T09:11:03.000Z">
-<meta property="article:modified_time" content="2021-05-05T10:03:14.324Z">
-<meta property="article:author" content="x1a071">
-<meta property="article:tag" content="Python">
-<meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css,npm/hexo-theme-nexmoe@latest/source/lib/mdui_043tiny/css/mdui.css,npm/hexo-theme-nexmoe@latest/source/lib/iconfont/iconfont.css?v=233" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=1620209179911">
-  
-  <link rel="stylesheet" href="/css/style.css?v=1620209179911">
-  <link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1620209179911">
+2.这里是获取你要爬取哪一页的图片,需要填写.1234,"> 
+    <meta name="author" content="x1a071"> 
+    <link rel="alternative" href="atom.xml" title="昔骜" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body class="mdui-drawer-body-left">
-  
-  <div id="nexmoe-background">
-    <div class="nexmoe-bg" style="background-image: url(http://r.photo.store.qq.com/psc?/V52xNKaD0NmxUM0J9d5o0igeOt03YfcN/45NBuzDIW489QBoVep5mcfvkuUSL2*fGz7KtT9T3aSyGU.3s80SKI2szzs6c6JV0nqSRtejoIts0mgOZWLXgs6kgY.Xw2xlG*2hmPyRIh5w!/r)"></div>
-    <div class="mdui-appbar mdui-shadow-0">
-      <div class="mdui-toolbar">
-        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
-        <div class="mdui-toolbar-spacer"></div>
-        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
-        <a href="/" title="x1a071" class="mdui-btn mdui-btn-icon"><img src="http://r.photo.store.qq.com/psc?/V52xNKaD0NmxUM0J9d5o0igeOt12HUTn/45NBuzDIW489QBoVep5mcWCNuz.96J8OLtOLl1nVE7HtRSNZSBnHX*ifopLYng7o9P4PG.8AMNpcH2zusgZqvIUTY7fmG4uvHb7KCtEry2E!/r" alt="x1a071"></a>
-       </div>
-    </div>
-  </div>
-  <div id="nexmoe-header">
-      <div class="nexmoe-drawer mdui-drawer" id="drawer">
-    <div class="nexmoe-avatar mdui-ripple">
-        <a href="/" title="x1a071">
-            <img src="http://r.photo.store.qq.com/psc?/V52xNKaD0NmxUM0J9d5o0igeOt12HUTn/45NBuzDIW489QBoVep5mcWCNuz.96J8OLtOLl1nVE7HtRSNZSBnHX*ifopLYng7o9P4PG.8AMNpcH2zusgZqvIUTY7fmG4uvHb7KCtEry2E!/r" alt="x1a071" alt="x1a071">
-        </a>
-    </div>
-    <div class="nexmoe-count">
-        <div><span>Articles</span>2</div>
-        <div><span>Tags</span>1</div>
-        <div><span>Categories</span>0</div>
-    </div>
-    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
-            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
-            <div class="mdui-list-item-content">
-                回到首页
+<body class="loading">
+    <span id="config-title" style="display:none">昔骜</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://x1a071.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">彼岸图库爬虫</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
             </div>
-        </a>
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于博客">
-            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-            <div class="mdui-list-item-content">
-                关于博客
-            </div>
-        </a>
-        
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
-            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
-            <div class="mdui-list-item-content">
-                我的朋友
-            </div>
-        </a>
-        
-    </div>
-    <aside id="nexmoe-sidebar">
-  
-  <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-search">
-        <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
-            <label><input id="search_value" name="q" type="search" placeholder="Search"></label>
-        </form>
-    </div>
-</div>
-  
-  <div class="nexmoe-widget-wrap">
-    <div class="nexmoe-widget nexmoe-social">
-        <a class="mdui-ripple" href="https://space.bilibili.com/321581064" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
-            <i class="nexmoefont icon-bilibili"></i>
-        </a><a class="mdui-ripple" href="https://github.com/x1a071/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
-            <i class="nexmoefont icon-github"></i>
-        </a>
-    </div>
-</div>
-  
-  
-
-  
-  
-  <div class="nexmoe-widget-wrap">
-    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
-      <a href="/tags/Python/" style="font-size: 10px;">Python</a>
-    </div>
-    
-  </div>
-
-  
-</aside>
-    <div class="nexmoe-copyright">
-        &copy; 2021 x1a071
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
-        
-    </div>
-</div><!-- .nexmoe-drawer -->
-  </div>
-  <div id="nexmoe-content">
-    <div class="nexmoe-primary">
-        <div class="nexmoe-post">
-
-  <article>
-    
-        <div class="nexmoe-post-cover" style="padding-bottom: 66.66666666666666%;"> 
-            <img data-src="http://r.photo.store.qq.com/psc?/V52xNKaD0NmxUM0J9d5o0igeOt03YfcN/45NBuzDIW489QBoVep5mcfvkuUSL2*fGz7KtT9T3aSyGU.3s80SKI2szzs6c6JV0nqSRtejoIts0mgOZWLXgs6kgY.Xw2xlG*2hmPyRIh5w!/r" data-sizes="auto" alt="彼岸图库爬虫" class="lazyload">
-            <h1>彼岸图库爬虫</h1>
+            <div id="qr"></div>
         </div>
-    
-    
-    <div class="nexmoe-post-meta nexmoe-rainbow-fill" style="margin:10px 0!important;">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2021年05月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>340 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+    </div>
+    <div class="scrollbar"></div>
 </div>
 
-    
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">彼岸图库爬虫</h1>
+        <div class="stuff">
+            <span>五月 05, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
 
-    <p>我的第一个爬虫,不算优秀但能凑合.</p>
+
+        </div>
+        <div class="content markdown">
+            <p>我的第一个爬虫,不算优秀但能凑合.</p>
 <h2 id="1-首先导入需要的pip库"><a href="#1-首先导入需要的pip库" class="headerlink" title="1.首先导入需要的pip库."></a>1.首先导入需要的pip库.</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-这里是获取你要爬取哪一页的图片-需要填写"><a href="#2-这里是获取你要爬取哪一页的图片-需要填写" class="headerlink" title="2.这里是获取你要爬取哪一页的图片,需要填写."></a>2.这里是获取你要爬取哪一页的图片,需要填写.</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    page = <span class="built_in">input</span>(<span class="string">&#x27;选择你爬取的页数2-132&#x27;</span>)</span><br><span class="line">    url = <span class="string">f&#x27;http://www.netbian.com/dongman/index_<span class="subst">&#123;page&#125;</span>.htm&#x27;</span></span><br><span class="line">    get = requests.get(url).content.decode(<span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -155,87 +69,112 @@
 <h3 id="6-保存图片-路径按自己需求-需要有此文件夹"><a href="#6-保存图片-路径按自己需求-需要有此文件夹" class="headerlink" title="6.保存图片,路径按自己需求,需要有此文件夹."></a>6.保存图片,路径按自己需求,需要有此文件夹.</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img = requests.get(pic)</span><br><span class="line">time.sleep(<span class="number">0.3</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;(！！路径！！)/<span class="subst">&#123;page&#125;</span>----，第<span class="subst">&#123;a&#125;</span>张--,<span class="subst">&#123;name&#125;</span>.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> girl:</span><br><span class="line">    girl.write(img.content)</span><br></pre></td></tr></table></figure>
 
 <h3 id="7-保存后的结果就是-页数-—-第-几-张–-图片名字-jpg"><a href="#7-保存后的结果就是-页数-—-第-几-张–-图片名字-jpg" class="headerlink" title="7.保存后的结果就是  (页数)—-第(几)张–(图片名字).jpg"></a>7.保存后的结果就是  (页数)—-第(几)张–(图片名字).jpg</h3>
-  </article>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
 
-  
-    
-  <div class="nexmoe-post-copyright">
-    <strong>Author：</strong>x1a071<br>
-    <strong>Link：</strong><a href="https://x1a071.github.io/2021/05/05/%E5%BD%BC%E5%B2%B8%E5%9B%BE%E5%BA%93%E7%88%AC%E8%99%AB/" title="https:&#x2F;&#x2F;x1a071.github.io&#x2F;2021&#x2F;05&#x2F;05&#x2F;%E5%BD%BC%E5%B2%B8%E5%9B%BE%E5%BA%93%E7%88%AC%E8%99%AB&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;x1a071.github.io&#x2F;2021&#x2F;05&#x2F;05&#x2F;%E5%BD%BC%E5%B2%B8%E5%9B%BE%E5%BA%93%E7%88%AC%E8%99%AB&#x2F;</a><br>
-    
-      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-    
-  </div>
 
-
-  
-  
-  <div class="nexmoe-post-meta nexmoe-rainbow">
-    
-    
-        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Python/" rel="tag">Python</a>
+    </div>
     
 </div>
 
-  <div class="nexmoe-post-footer">
-    <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '80b2453b6d5f37ad6225',
-        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
-        id: window.location.pathname,
-        repo: 'nexmoe.github.io',
-        owner: 'nexmoe',
-        admin: 'nexmoe'
-    })
-    gitalk.render('gitalk')
-</script>
-</section>
-  </div>
+
+    </div>
 </div>
-        <div class="nexmoe-post-right">
-          <div class="nexmoe-fixed">
-            <div class="nexmoe-tool"> 
-              
-                
-              
-              <a href="#nexmoe-content" class="toc-link" aria-label="回到顶部" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
         </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/combine/npm/lazysizes@5.1.0/lazysizes.min.js,gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js,npm/mdui@0.4.3/dist/js/mdui.min.js?v=1"></script>
-<script>
-	hljs.initHighlightingOnLoad();
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- 
-
-<script src="/js/app.js?v=1620209179913"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js"></script>
-<script>
-	$(".justified-gallery").justifiedGallery({
-		rowHeight: 160,
-		margins: 10,
-	});
-</script>
-
-  
+</div>
 
 
 
 
 
-</body>
 
 </html>
