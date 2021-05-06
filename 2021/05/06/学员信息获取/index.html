@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>学员信息获取 - 昔骜</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="一个获取学员信息的程序.
+先创建一个函数.1def stu_register(name, age, country, courses):
+
+设置好写入文本的路径和格式.1234567    f = ,"> 
+    <meta name="author" content="x1a071"> 
+    <link rel="alternative" href="atom.xml" title="昔骜" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">昔骜</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://x1a071.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">学员信息获取</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">学员信息获取</h1>
+        <div class="stuff">
+            <span>五月 06, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>一个获取学员信息的程序.</p>
+<h2 id="先创建一个函数"><a href="#先创建一个函数" class="headerlink" title="先创建一个函数."></a>先创建一个函数.</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stu_register</span>(<span class="params">name, age, country, courses</span>):</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="设置好写入文本的路径和格式"><a href="#设置好写入文本的路径和格式" class="headerlink" title="设置好写入文本的路径和格式."></a>设置好写入文本的路径和格式.</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    f = <span class="built_in">open</span>(<span class="string">&#x27;学员列表.txt&#x27;</span>, <span class="string">&#x27;a+&#x27;</span>)</span><br><span class="line">    f.write(<span class="string">f&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">姓名:<span class="subst">&#123;name&#125;</span></span></span><br><span class="line"><span class="string">年龄:<span class="subst">&#123;age&#125;</span></span></span><br><span class="line"><span class="string">国籍:<span class="subst">&#123;country&#125;</span></span></span><br><span class="line"><span class="string">课程:<span class="subst">&#123;courses&#125;</span></span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="让学员输入相关信息并调用函数完成保存"><a href="#让学员输入相关信息并调用函数完成保存" class="headerlink" title="让学员输入相关信息并调用函数完成保存."></a>让学员输入相关信息并调用函数完成保存.</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="built_in">input</span>(<span class="string">&#x27;你叫什么名字:&#x27;</span>)</span><br><span class="line">age = <span class="built_in">input</span>(<span class="string">&#x27;你的年龄:&#x27;</span>)</span><br><span class="line">country = <span class="built_in">input</span>(<span class="string">&#x27;你的国籍&#x27;</span>)</span><br><span class="line">courses = <span class="built_in">input</span>(<span class="string">&#x27;你在学习的课程&#x27;</span>)</span><br><span class="line"></span><br><span class="line">stu_register(name, age, country, courses)</span><br></pre></td></tr></table></figure>
+
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><img src="https://riyugo.com/o/210506/npsbuk.png">
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://music.163.com/song/media/outer/url?id=496869422.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=29561077.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=461347998.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://music.163.com/song/media/outer/url?id=17706535.mp3'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='http://music.163.com/song/media/outer/url?id=536622304.mp3'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='http://music.163.com/song/media/outer/url?id=443242.mp3'></li>
+                        
+                    
+                        
+                            <li title='6' data-url='http://music.163.com/song/media/outer/url?id=785793.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0"><span class="toc-number">1.</span> <span class="toc-text">先创建一个函数.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%A5%BD%E5%86%99%E5%85%A5%E6%96%87%E6%9C%AC%E7%9A%84%E8%B7%AF%E5%BE%84%E5%92%8C%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">设置好写入文本的路径和格式.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A9%E5%AD%A6%E5%91%98%E8%BE%93%E5%85%A5%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF%E5%B9%B6%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0%E5%AE%8C%E6%88%90%E4%BF%9D%E5%AD%98"><span class="toc-number">3.</span> <span class="toc-text">让学员输入相关信息并调用函数完成保存.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-number">4.</span> <span class="toc-text">效果图</span></a></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
