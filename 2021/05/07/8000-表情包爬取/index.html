@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>8000+表情包爬取 - 昔骜</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="全程无报错, 8840张表情包爬取, gif, jpg, 超详细！
+————————————————–————————————————–
+
+全部代码1234567891011121314151617,"> 
+    <meta name="author" content="x1a071"> 
+    <link rel="alternative" href="atom.xml" title="昔骜" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">昔骜</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://x1a071.github.io"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">8000+表情包爬取</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">8000+表情包爬取</h1>
+        <div class="stuff">
+            <span>五月 07, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>全程无报错, 8840张表情包爬取, gif, jpg, 超详细！</p>
+<h1 id="————————————————–"><a href="#————————————————–" class="headerlink" title="————————————————–"></a>————————————————–</h1><h1 id="————————————————–-1"><a href="#————————————————–-1" class="headerlink" title="————————————————–"></a>————————————————–</h1><img src="https://riyugo.com/o/210508/4b03j.png">
+
+<h2 id="全部代码"><a href="#全部代码" class="headerlink" title="全部代码"></a>全部代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> a != <span class="number">201</span>:</span><br><span class="line">    a += <span class="number">1</span></span><br><span class="line">    url = <span class="string">f&quot;https://fabiaoqing.com/biaoqing/lists/page/<span class="subst">&#123;a&#125;</span>.html&quot;</span></span><br><span class="line">    url_get = requests.get(url, headers=headers).content.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    b = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> b != <span class="number">45</span>:</span><br><span class="line">        img = re.findall(<span class="string">&#x27;data-original=&quot;http://(.*?)\.sinaimg.cn/bmiddle/(.*?)\.(.*?)&quot;&#x27;</span>, url_get)[b]</span><br><span class="line">        low_name = re.findall(<span class="string">&#x27;title=&quot;(.*?)&quot; alt=&quot;(.*?)&quot;&#x27;</span>, url_get)[b][<span class="number">0</span>]</span><br><span class="line">        symbol_list = <span class="string">&quot;[&#x27;\/:*?\&quot;&lt;&gt;|&#x27;]&quot;</span></span><br><span class="line">        name = re.sub(symbol_list, <span class="string">&#x27;&#x27;</span>, low_name)</span><br><span class="line">        name = name[:<span class="number">250</span>]</span><br><span class="line">        img_url = <span class="string">f&#x27;http://<span class="subst">&#123;img[<span class="number">0</span>]&#125;</span>.sinaimg.cn/bmiddle/<span class="subst">&#123;img[<span class="number">1</span>]&#125;</span>.<span class="subst">&#123;img[<span class="number">2</span>]&#125;</span>&#x27;</span></span><br><span class="line">        <span class="built_in">print</span>(img_url)</span><br><span class="line">        b += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        img_url_get = requests.get(img_url)</span><br><span class="line">        time.sleep(<span class="number">0.2</span>)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;F:/pythonProject/爬虫/爬取下来的图片/表情包/<span class="subst">&#123;name&#125;</span>.<span class="subst">&#123;img[<span class="number">2</span>]&#125;</span>&#x27;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> pic:</span><br><span class="line">            pic.write(img_url_get.content)</span><br><span class="line">            <span class="built_in">print</span>(name, <span class="string">&#x27;保存成功&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
+
+<h3 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建循环"><a href="#创建循环" class="headerlink" title="创建循环"></a>创建循环</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="已知页数为200"><a href="#已知页数为200" class="headerlink" title="已知页数为200"></a>已知页数为200</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> a != <span class="number">201</span>:</span><br></pre></td></tr></table></figure>
+
+<h3 id="每循环一次页数-1"><a href="#每循环一次页数-1" class="headerlink" title="每循环一次页数+1"></a>每循环一次页数+1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="网址-a-为页数参数"><a href="#网址-a-为页数参数" class="headerlink" title="网址, {a}为页数参数"></a>网址, {a}为页数参数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">f&quot;https://fabiaoqing.com/biaoqing/lists/page/<span class="subst">&#123;a&#125;</span>.html&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="读取网页源码"><a href="#读取网页源码" class="headerlink" title="读取网页源码"></a>读取网页源码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url_get = requests.get(url, headers=headers).content.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置一秒延迟"><a href="#设置一秒延迟" class="headerlink" title="设置一秒延迟"></a>设置一秒延迟</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建循环-1"><a href="#创建循环-1" class="headerlink" title="创建循环"></a>创建循环</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="已知每页图片为45"><a href="#已知每页图片为45" class="headerlink" title="已知每页图片为45"></a>已知每页图片为45</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> b != <span class="number">45</span>:</span><br></pre></td></tr></table></figure>
+
+<h3 id="第一个-为网址前缀-第二个-为图片网址不一样的参数-第三个-为图片的格式-b-为提取图片的相关信息"><a href="#第一个-为网址前缀-第二个-为图片网址不一样的参数-第三个-为图片的格式-b-为提取图片的相关信息" class="headerlink" title="第一个(.?)为网址前缀, 第二个(.?)为图片网址不一样的参数, 第三个(.*?)为图片的格式, [b]为提取图片的相关信息"></a>第一个(.<em>?)为网址前缀, 第二个(.</em>?)为图片网址不一样的参数, 第三个(.*?)为图片的格式, [b]为提取图片的相关信息</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img = re.findall(<span class="string">&#x27;data-original=&quot;http://(.*?)\.sinaimg.cn/bmiddle/(.*?)\.(.*?)&quot;&#x27;</span>, url_get)[b]</span><br></pre></td></tr></table></figure>
+
+<h3 id="提取未经处理的图片名称-b-为提取图片的相关信息-0-为提取一个名称-两个数据一样-这样写避免出错"><a href="#提取未经处理的图片名称-b-为提取图片的相关信息-0-为提取一个名称-两个数据一样-这样写避免出错" class="headerlink" title="提取未经处理的图片名称, [b]为提取图片的相关信息, [0]为提取一个名称, 两个数据一样, 这样写避免出错"></a>提取未经处理的图片名称, [b]为提取图片的相关信息, [0]为提取一个名称, 两个数据一样, 这样写避免出错</h3><h3 id="文件保存格式长度最高为-255-不可以带有-‘-quot-lt-gt-’-符号"><a href="#文件保存格式长度最高为-255-不可以带有-‘-quot-lt-gt-’-符号" class="headerlink" title="文件保存格式长度最高为:255, 不可以带有: [‘/:*?&quot;&lt;&gt;|’] 符号"></a>文件保存格式长度最高为:255, 不可以带有: [‘/:*?&quot;&lt;&gt;|’] 符号</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">low_name = re.findall(<span class="string">&#x27;title=&quot;(.*?)&quot; alt=&quot;(.*?)&quot;&#x27;</span>, url_get)[b][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="以下三句-1-列出要去掉的符号-2-去掉名称中的违规符号-3-进行切片限制长度-避免因为名称过长报错"><a href="#以下三句-1-列出要去掉的符号-2-去掉名称中的违规符号-3-进行切片限制长度-避免因为名称过长报错" class="headerlink" title="以下三句  1, 列出要去掉的符号  2, 去掉名称中的违规符号  3, 进行切片限制长度,避免因为名称过长报错"></a>以下三句  1, 列出要去掉的符号  2, 去掉名称中的违规符号  3, 进行切片限制长度,避免因为名称过长报错</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">symbol_list = <span class="string">&quot;[&#x27;\/:*?\&quot;&lt;&gt;|&#x27;]&quot;</span></span><br><span class="line">name = re.sub(symbol_list, <span class="string">&#x27;&#x27;</span>, low_name)</span><br><span class="line">name = name[:<span class="number">250</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="整合一下完整的图片网址"><a href="#整合一下完整的图片网址" class="headerlink" title="整合一下完整的图片网址"></a>整合一下完整的图片网址</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_url = <span class="string">f&#x27;http://<span class="subst">&#123;img[<span class="number">0</span>]&#125;</span>.sinaimg.cn/bmiddle/<span class="subst">&#123;img[<span class="number">1</span>]&#125;</span>.<span class="subst">&#123;img[<span class="number">2</span>]&#125;</span>&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="打印出网址-因为可视比较好看"><a href="#打印出网址-因为可视比较好看" class="headerlink" title="打印出网址, 因为可视比较好看"></a>打印出网址, 因为可视比较好看</h3><img src="https://riyugo.com/o/210508/5hjxg.png">
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(img_url)</span><br></pre></td></tr></table></figure>
+
+<h3 id="每次循环进行下一张图片的处理"><a href="#每次循环进行下一张图片的处理" class="headerlink" title="每次循环进行下一张图片的处理"></a>每次循环进行下一张图片的处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="读取图片数据"><a href="#读取图片数据" class="headerlink" title="读取图片数据"></a>读取图片数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">img_url_get = requests.get(img_url)</span><br></pre></td></tr></table></figure>
+
+<h3 id="延迟0-2秒-以免给服务器带来困扰"><a href="#延迟0-2秒-以免给服务器带来困扰" class="headerlink" title="延迟0.2秒, 以免给服务器带来困扰"></a>延迟0.2秒, 以免给服务器带来困扰</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(<span class="number">0.2</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置保存路径-name-为图片的名称-img-2-为图片的格式-最后打印-图片的名字-保存成功"><a href="#设置保存路径-name-为图片的名称-img-2-为图片的格式-最后打印-图片的名字-保存成功" class="headerlink" title="设置保存路径, {name}为图片的名称, {img[2]}为图片的格式, 最后打印(图片的名字) 保存成功"></a>设置保存路径, {name}为图片的名称, {img[2]}为图片的格式, 最后打印(图片的名字) 保存成功</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;F:/pythonProject/爬虫/爬取下来的图片/表情包/<span class="subst">&#123;name&#125;</span>.<span class="subst">&#123;img[<span class="number">2</span>]&#125;</span>&#x27;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> pic:</span><br><span class="line">    pic.write(img_url_get.content)</span><br><span class="line">    <span class="built_in">print</span>(name, <span class="string">&#x27;保存成功&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="https://riyugo.com/o/210508/4zjvn.png">
+
+
+<h2 id="全部代码-带注释版本"><a href="#全部代码-带注释版本" class="headerlink" title="全部代码(带注释版本)"></a>全部代码(带注释版本)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入模块</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 请求头</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36 Edg/90.0.818.51&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建循环</span></span><br><span class="line">a = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 已知页数为200</span></span><br><span class="line"><span class="keyword">while</span> a != <span class="number">201</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 每循环一次页数+1</span></span><br><span class="line">    a += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 网址, &#123;a&#125;为页数参数</span></span><br><span class="line">    url = <span class="string">f&quot;https://fabiaoqing.com/biaoqing/lists/page/<span class="subst">&#123;a&#125;</span>.html&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 读取网页源码</span></span><br><span class="line">    url_get = requests.get(url, headers=headers).content.decode(<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 设置一秒延迟</span></span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建循环</span></span><br><span class="line">    b = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 已知每页图片为45</span></span><br><span class="line">    <span class="keyword">while</span> b != <span class="number">45</span>:</span><br><span class="line">        <span class="comment"># 第一个(.*?)为网址前缀, 第二个(.*?)为图片网址不一样的参数, 第三个(.*?)为图片的格式, [b]为提取图片的相关信息</span></span><br><span class="line">        img = re.findall(<span class="string">&#x27;data-original=&quot;http://(.*?)\.sinaimg.cn/bmiddle/(.*?)\.(.*?)&quot;&#x27;</span>, url_get)[b]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 提取未经处理的图片名称, [b]为提取图片的相关信息, [0]为提取一个名称, 两个数据一样, 这样写避免出错</span></span><br><span class="line">        <span class="comment"># 文件保存格式长度最高为:255, 不可以带有: [&#x27;\/:*?\&quot;&lt;&gt;|&#x27;] 符号</span></span><br><span class="line">        low_name = re.findall(<span class="string">&#x27;title=&quot;(.*?)&quot; alt=&quot;(.*?)&quot;&#x27;</span>, url_get)[b][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 以下三句  1, 列出要去掉的符号  2, 去掉名称中的违规符号  3, 进行切片限制长度,避免因为名称过长报错</span></span><br><span class="line">        symbol_list = <span class="string">&quot;[&#x27;\/:*?\&quot;&lt;&gt;|&#x27;]&quot;</span></span><br><span class="line">        name = re.sub(symbol_list, <span class="string">&#x27;&#x27;</span>, low_name)</span><br><span class="line">        name = name[:<span class="number">250</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 整合一下完整的图片网址</span></span><br><span class="line">        img_url = <span class="string">f&#x27;http://<span class="subst">&#123;img[<span class="number">0</span>]&#125;</span>.sinaimg.cn/bmiddle/<span class="subst">&#123;img[<span class="number">1</span>]&#125;</span>.<span class="subst">&#123;img[<span class="number">2</span>]&#125;</span>&#x27;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 打印出网址, 因为可视比较好看</span></span><br><span class="line">        <span class="built_in">print</span>(img_url)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 每次循环进行下一张图片的处理</span></span><br><span class="line">        b += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 读取图片数据</span></span><br><span class="line">        img_url_get = requests.get(img_url)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 延迟0.2秒, 以免给服务器带来困扰</span></span><br><span class="line">        time.sleep(<span class="number">0.2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 设置保存路径, &#123;name&#125;为图片的名称, &#123;img[2]&#125;为图片的格式, 最后打印(图片的名字) 保存成功</span></span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;F:/pythonProject/爬虫/爬取下来的图片/表情包/<span class="subst">&#123;name&#125;</span>.<span class="subst">&#123;img[<span class="number">2</span>]&#125;</span>&#x27;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> pic:</span><br><span class="line">            pic.write(img_url_get.content)</span><br><span class="line">            <span class="built_in">print</span>(name, <span class="string">&#x27;保存成功&#x27;</span>)</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://music.163.com/song/media/outer/url?id=496869422.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=29561077.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=461347998.mp3'></li>
+                        
+                    
+                        
+                            <li title='3' data-url='http://music.163.com/song/media/outer/url?id=17706535.mp3'></li>
+                        
+                    
+                        
+                            <li title='4' data-url='http://music.163.com/song/media/outer/url?id=536622304.mp3'></li>
+                        
+                    
+                        
+                            <li title='5' data-url='http://music.163.com/song/media/outer/url?id=443242.mp3'></li>
+                        
+                    
+                        
+                            <li title='6' data-url='http://music.163.com/song/media/outer/url?id=785793.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%93"><span class="toc-number">1.</span> <span class="toc-text">————————————————–</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E2%80%93-1"><span class="toc-number">2.</span> <span class="toc-text">————————————————–</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E4%BB%A3%E7%A0%81"><span class="toc-number">2.1.</span> <span class="toc-text">全部代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97"><span class="toc-number">2.1.1.</span> <span class="toc-text">导入模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-number">2.1.2.</span> <span class="toc-text">请求头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.1.3.</span> <span class="toc-text">创建循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5%E9%A1%B5%E6%95%B0%E4%B8%BA200"><span class="toc-number">2.1.4.</span> <span class="toc-text">已知页数为200</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%8F%E5%BE%AA%E7%8E%AF%E4%B8%80%E6%AC%A1%E9%A1%B5%E6%95%B0-1"><span class="toc-number">2.1.5.</span> <span class="toc-text">每循环一次页数+1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%9D%80-a-%E4%B8%BA%E9%A1%B5%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-number">2.1.6.</span> <span class="toc-text">网址, {a}为页数参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81"><span class="toc-number">2.1.7.</span> <span class="toc-text">读取网页源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%80%E7%A7%92%E5%BB%B6%E8%BF%9F"><span class="toc-number">2.1.8.</span> <span class="toc-text">设置一秒延迟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%BE%AA%E7%8E%AF-1"><span class="toc-number">2.1.9.</span> <span class="toc-text">创建循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E7%9F%A5%E6%AF%8F%E9%A1%B5%E5%9B%BE%E7%89%87%E4%B8%BA45"><span class="toc-number">2.1.10.</span> <span class="toc-text">已知每页图片为45</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA-%E4%B8%BA%E7%BD%91%E5%9D%80%E5%89%8D%E7%BC%80-%E7%AC%AC%E4%BA%8C%E4%B8%AA-%E4%B8%BA%E5%9B%BE%E7%89%87%E7%BD%91%E5%9D%80%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84%E5%8F%82%E6%95%B0-%E7%AC%AC%E4%B8%89%E4%B8%AA-%E4%B8%BA%E5%9B%BE%E7%89%87%E7%9A%84%E6%A0%BC%E5%BC%8F-b-%E4%B8%BA%E6%8F%90%E5%8F%96%E5%9B%BE%E7%89%87%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="toc-number">2.1.11.</span> <span class="toc-text">第一个(.?)为网址前缀, 第二个(.?)为图片网址不一样的参数, 第三个(.*?)为图片的格式, [b]为提取图片的相关信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%8F%96%E6%9C%AA%E7%BB%8F%E5%A4%84%E7%90%86%E7%9A%84%E5%9B%BE%E7%89%87%E5%90%8D%E7%A7%B0-b-%E4%B8%BA%E6%8F%90%E5%8F%96%E5%9B%BE%E7%89%87%E7%9A%84%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF-0-%E4%B8%BA%E6%8F%90%E5%8F%96%E4%B8%80%E4%B8%AA%E5%90%8D%E7%A7%B0-%E4%B8%A4%E4%B8%AA%E6%95%B0%E6%8D%AE%E4%B8%80%E6%A0%B7-%E8%BF%99%E6%A0%B7%E5%86%99%E9%81%BF%E5%85%8D%E5%87%BA%E9%94%99"><span class="toc-number">2.1.12.</span> <span class="toc-text">提取未经处理的图片名称, [b]为提取图片的相关信息, [0]为提取一个名称, 两个数据一样, 这样写避免出错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BF%9D%E5%AD%98%E6%A0%BC%E5%BC%8F%E9%95%BF%E5%BA%A6%E6%9C%80%E9%AB%98%E4%B8%BA-255-%E4%B8%8D%E5%8F%AF%E4%BB%A5%E5%B8%A6%E6%9C%89-%E2%80%98-quot-lt-gt-%E2%80%99-%E7%AC%A6%E5%8F%B7"><span class="toc-number">2.1.13.</span> <span class="toc-text">文件保存格式长度最高为:255, 不可以带有: [‘&#x2F;:*?&quot;&lt;&gt;|’] 符号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E4%B8%8B%E4%B8%89%E5%8F%A5-1-%E5%88%97%E5%87%BA%E8%A6%81%E5%8E%BB%E6%8E%89%E7%9A%84%E7%AC%A6%E5%8F%B7-2-%E5%8E%BB%E6%8E%89%E5%90%8D%E7%A7%B0%E4%B8%AD%E7%9A%84%E8%BF%9D%E8%A7%84%E7%AC%A6%E5%8F%B7-3-%E8%BF%9B%E8%A1%8C%E5%88%87%E7%89%87%E9%99%90%E5%88%B6%E9%95%BF%E5%BA%A6-%E9%81%BF%E5%85%8D%E5%9B%A0%E4%B8%BA%E5%90%8D%E7%A7%B0%E8%BF%87%E9%95%BF%E6%8A%A5%E9%94%99"><span class="toc-number">2.1.14.</span> <span class="toc-text">以下三句  1, 列出要去掉的符号  2, 去掉名称中的违规符号  3, 进行切片限制长度,避免因为名称过长报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E5%90%88%E4%B8%80%E4%B8%8B%E5%AE%8C%E6%95%B4%E7%9A%84%E5%9B%BE%E7%89%87%E7%BD%91%E5%9D%80"><span class="toc-number">2.1.15.</span> <span class="toc-text">整合一下完整的图片网址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%8D%B0%E5%87%BA%E7%BD%91%E5%9D%80-%E5%9B%A0%E4%B8%BA%E5%8F%AF%E8%A7%86%E6%AF%94%E8%BE%83%E5%A5%BD%E7%9C%8B"><span class="toc-number">2.1.16.</span> <span class="toc-text">打印出网址, 因为可视比较好看</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%8F%E6%AC%A1%E5%BE%AA%E7%8E%AF%E8%BF%9B%E8%A1%8C%E4%B8%8B%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%89%87%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">2.1.17.</span> <span class="toc-text">每次循环进行下一张图片的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E5%9B%BE%E7%89%87%E6%95%B0%E6%8D%AE"><span class="toc-number">2.1.18.</span> <span class="toc-text">读取图片数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F0-2%E7%A7%92-%E4%BB%A5%E5%85%8D%E7%BB%99%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B8%A6%E6%9D%A5%E5%9B%B0%E6%89%B0"><span class="toc-number">2.1.19.</span> <span class="toc-text">延迟0.2秒, 以免给服务器带来困扰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%BF%9D%E5%AD%98%E8%B7%AF%E5%BE%84-name-%E4%B8%BA%E5%9B%BE%E7%89%87%E7%9A%84%E5%90%8D%E7%A7%B0-img-2-%E4%B8%BA%E5%9B%BE%E7%89%87%E7%9A%84%E6%A0%BC%E5%BC%8F-%E6%9C%80%E5%90%8E%E6%89%93%E5%8D%B0-%E5%9B%BE%E7%89%87%E7%9A%84%E5%90%8D%E5%AD%97-%E4%BF%9D%E5%AD%98%E6%88%90%E5%8A%9F"><span class="toc-number">2.1.20.</span> <span class="toc-text">设置保存路径, {name}为图片的名称, {img[2]}为图片的格式, 最后打印(图片的名字) 保存成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E9%83%A8%E4%BB%A3%E7%A0%81-%E5%B8%A6%E6%B3%A8%E9%87%8A%E7%89%88%E6%9C%AC"><span class="toc-number">2.2.</span> <span class="toc-text">全部代码(带注释版本)</span></a></li></ol></li></ol>	
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
